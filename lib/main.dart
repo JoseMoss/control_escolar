@@ -7,8 +7,9 @@ import 'package:firebase_core/firebase_core.dart';
 // Importamos el archivo de configuración generado por Firebase para tu plataforma
 import 'firebase_options.dart';
 
-// Importamos el archivo de la pantalla principal
+// Importamos las pantallas de la aplicación
 import 'package:control_escolar/screens/home_screen.dart';
+import 'package:control_escolar/screens/horario_screen.dart';
 
 // La función main ahora es asíncrona (async) porque necesitamos esperar
 // a que Firebase se conecte a la nube antes de encender toda la aplicación.
@@ -35,7 +36,12 @@ class ControlEscolarApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
         useMaterial3: true,
       ),
-      home: const HomeScreen(), // Llamamos a la clase importada desde home_screen.dart
+      // Pantalla de inicio predeterminada
+      home: const HomeScreen(), 
+      // Rutas para navegar entre las diferentes pantallas de la app
+      routes: {
+        '/horario': (context) => const HorarioScreen(),
+      },
     );
   }
 }

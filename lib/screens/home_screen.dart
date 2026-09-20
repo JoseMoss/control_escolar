@@ -8,6 +8,7 @@ import 'package:control_escolar/screens/registro_alumno_screen.dart';
 import 'package:control_escolar/screens/registroMateriaScreen.dart';
 import 'package:control_escolar/screens/registro_actividad_screen.dart';
 import 'package:control_escolar/screens/lista_materias_screen.dart';
+import 'package:control_escolar/screens/horario_screen.dart';
 
 /// Pantalla principal (Dashboard) de la aplicación Synapse Classroom
 class HomeScreen extends StatelessWidget {
@@ -21,6 +22,19 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Synapse Classroom'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         actions: [
+          // Botón para ver el Horario de clases
+          IconButton(
+            icon: const Icon(Icons.calendar_month),
+            tooltip: 'Ver Horario',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HorarioScreen(),
+                ),
+              );
+            },
+          ),
           // Botón para ver la lista general de materias registradas
           IconButton(
             icon: const Icon(Icons.list_alt),
